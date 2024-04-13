@@ -1,24 +1,38 @@
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.init";
 import { FcGoogle } from "react-icons/fc";
+import { GithubAuthProvider } from "firebase/auth";
+import { GrGithub } from "react-icons/gr";
+
 
 
 
 const Login = () => {
   const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const handleGoogleLogin =()=>{
-    signInWithPopup(auth, provider)
+    signInWithPopup(auth, googleProvider)
     .then(result =>   {
       const user = result.user;
       console.log(user)
     })
     .catch(error =>{
-      console.log('error', error.message)
+      console.log(error.message)
     })
   }
 
+  const handleGithubSignIn = ()=>{
+    signInWithPopup(auth, githubProvider)
+    .then( result => {
+      const loggedUser = result.user;
+      console.log(loggedUser)
+    })
+    .catch( error =>{
+      console.log(error)
+    })
+  }
     return (
         <div className="hero min-h-screen bg-base-200">
           <div className="hero-content flex-col">
@@ -46,7 +60,10 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
-        <button className="text-3xl mx-auto mb-3" onClick={handleGoogleLogin}><FcGoogle /></button>
+       {/* <div className="flex"> */}
+       <button className="text-3xl mx-auto mb-3" onClick={handleGoogleLogin}><FcGoogle /></button>
+        <button className="text-3xl mx-auto mb-3" onClick={handleGithubSignIn}><GrGithub /></button>
+       {/* </div> */}
     </div>
   </div>
 </div>
