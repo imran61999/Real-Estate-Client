@@ -60,10 +60,10 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
-       {/* <div className="flex"> */}
-       <button className="text-3xl mx-auto mb-3" onClick={handleGoogleLogin}><FcGoogle /></button>
-        <button className="text-3xl mx-auto mb-3" onClick={handleGithubSignIn}><GrGithub /></button>
-       {/* </div> */}
+       <div className="flex mb-5">
+          <button className="text-3xl mx-auto mb-3" onClick={handleGoogleLogin}><FcGoogle /></button>
+          <button className="text-3xl mx-auto mb-3" onClick={handleGithubSignIn}><GrGithub /></button>
+       </div>
     </div>
   </div>
 </div>
