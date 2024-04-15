@@ -1,4 +1,5 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { FiMapPin } from "react-icons/fi";
 
 const Details = () => {
     const {id} = useParams();
@@ -33,12 +34,15 @@ const Details = () => {
                    
                     <div className="flex">
                         <p><span className="font-bold">Facilities:</span> </p>
-                    <p>{facilities[0]}</p>
-                    <p>{facilities[1]}</p>
-                    <p>{facilities[2]}</p>
-                    <p>{facilities[3]}</p>
+                        <p>{facilities[0]}</p>
+                        <p>{facilities[1]}</p>
+                        <p>{facilities[2]}</p>
+                        <p>{facilities[3]}</p>
                     </div>
-                    <p>Address:{location}</p>
+                    <div className="grid grid-cols-2">
+                        <p><span className="font-bold">Address:</span>{location} </p> 
+                        <Link to='/map'><FiMapPin className="text-3xl"/></Link>
+                    </div>
                     <p>{description}</p>
                     <div className="card-actions justify-center">
                         <Link to="/"><button className="btn btn-secondary">Go Back</button></Link>
