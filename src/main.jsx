@@ -13,6 +13,7 @@ import Register from './Components/Register/Register';
 import AuthProvider from './Providers/AuthProvider';
 import Error from './Components/Error/Error';
 import { HelmetProvider } from 'react-helmet-async';
+import Details from './Components/Details/Details';
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/details/:id',
+        loader: ()=>fetch('/estate.json'),
+        element:<Details></Details>
       }
     ]
   },
