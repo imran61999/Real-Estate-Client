@@ -16,6 +16,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import Details from './Components/Details/Details';
 import Map from './Components/Map/Map';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import UpdateProfile from './Components/UpdateProfile/UpdateProfile';
+import Update from './Components/Update/Update';
 
 
 const router = createBrowserRouter([
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
       {
         path:'/map',
         element:<Map></Map>
+      },
+      {
+        path:'/uProfile',
+        element:<UpdateProfile></UpdateProfile>
+      },
+      {
+        path:'/update',
+        element:<Update></Update>
       }
     ]
   },

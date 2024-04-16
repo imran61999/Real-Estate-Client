@@ -6,7 +6,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
 
-  console.log('user in navbar', user);
+  // console.log('user in navbar', user);
 
   const handleLogOut =()=>{
     logOut()
@@ -37,19 +37,28 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             {
+             loading ? (
+              <p>loading....</p>
+             ):
+             
               user ? 
+             (
               <>
-                <div className="avatar">
-                  <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img title={user?.displayName} src={user?.photoURL} />
-                  </div>
+              <div className="avatar">
+                <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img title={user?.displayName} src={user?.photoURL} />
                 </div>
-                <button onClick={handleLogOut} className="btn btn-ghost">Log out</button>
-              </>
+              </div>
+              <button onClick={handleLogOut} className="btn btn-ghost">Log out</button>
+             </>
+             )
               : 
+             (
               <>
-                <Link to="/login"><button className="btn btn-ghost">Login</button></Link>
-              </>
+                  <Link to="/login"><button className="btn btn-ghost">Login</button></Link>
+               </>
+             )
+             
             }
           </div>
         </div>

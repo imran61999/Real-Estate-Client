@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Estate = ({estate}) => {
 const { id,estate_title,segment_name,description,price,status,Area,location,facilities,image,bedrooms,bathrooms,garage,year_built,featured } = estate;
-    console.log(estate);
+    // console.log(estate);
     return (
         <div className="card bg-base-100 shadow-xl">
   <figure><img src={image} /></figure>
