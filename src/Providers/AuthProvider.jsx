@@ -1,6 +1,8 @@
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.init";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 
 export const AuthContext  = createContext(null);
@@ -22,7 +24,10 @@ const AuthProvider = ({children}) => {
 
     const logOut = ()=>{
         setLoading(true);
-        return signOut(auth);
+        signOut(auth)
+        .then(()=>{
+            Swal.fire("You logged out successfully");
+        })
     }
 
     const updateUserProfile =(name, photo)=>{

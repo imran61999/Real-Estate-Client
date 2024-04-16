@@ -10,8 +10,6 @@ const Navbar = () => {
 
   const handleLogOut =()=>{
     logOut()
-    .then(()=>{})
-    .catch(error => console.log(error))
   }
 
     const links = 
@@ -19,10 +17,6 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/uProfile">Update Profile</NavLink></li>
     </>
-
-  if(loading){
-    return <p>Loading .....</p>
-  }
     return (
         <div className="navbar">
           <div className="navbar-start">
@@ -47,7 +41,7 @@ const Navbar = () => {
               <>
                 <div className="avatar">
                   <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                    <img src={user.photoURL} />
+                    <img title={user?.displayName} src={user?.photoURL} />
                   </div>
                 </div>
                 <button onClick={handleLogOut} className="btn btn-ghost">Log out</button>

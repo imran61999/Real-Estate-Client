@@ -15,6 +15,7 @@ import Error from './Components/Error/Error';
 import { HelmetProvider } from 'react-helmet-async';
 import Details from './Components/Details/Details';
 import Map from './Components/Map/Map';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       {
         path:'/details/:id',
         loader: ()=>fetch('/estate.json'),
-        element:<Details></Details>
+        element:<PrivateRoute><Details></Details></PrivateRoute>
       },
       {
         path:'/map',

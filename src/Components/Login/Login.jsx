@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -25,8 +26,14 @@ const Login = () => {
 
     signIn(email, password)
     .then(res =>{
-      const user = res.user;
+      Swal.fire("You logged In successfully");
       navigate('/');
+    })
+    .catch(error =>{
+      const msg = error.message;
+      Swal.fire("Provide real email and password",msg);
+
+
     })
   }
 
