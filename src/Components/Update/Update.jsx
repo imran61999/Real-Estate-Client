@@ -28,7 +28,7 @@ const Update = () => {
             <br />
             <input type="text" {...register('photoURL',{required: true})} defaultValue={user?.photoURL}  className="mb-4 border w-full py-2 px-4"/>
               
-              <input className="btn btn-secondary mb-4 w-full" type="submit" value="Update"/>
+              <input className="btn btn-secondary mb-4 w-full" type="submit" value="Save"/>
             </form>
            
         </div>

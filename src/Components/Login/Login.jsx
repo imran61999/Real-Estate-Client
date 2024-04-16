@@ -5,7 +5,7 @@ import { GithubAuthProvider } from "firebase/auth";
 import { GrGithub } from "react-icons/gr";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
@@ -15,6 +15,7 @@ const Login = () => {
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
   const { signIn } = useContext(AuthContext);
+  const location = useLocation();
   const navigate = useNavigate();
 
 
@@ -27,7 +28,7 @@ const Login = () => {
     signIn(email, password)
     .then(res =>{
       Swal.fire("You logged In successfully");
-      navigate('/');
+      navigate(location?.state ? location.state : '/');
     })
     .catch(error =>{
       const msg = error.message;
