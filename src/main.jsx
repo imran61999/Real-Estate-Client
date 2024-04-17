@@ -14,10 +14,11 @@ import AuthProvider from './Providers/AuthProvider';
 import Error from './Components/Error/Error';
 import { HelmetProvider } from 'react-helmet-async';
 import Details from './Components/Details/Details';
-import Map from './Components/Map/Map';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import UpdateProfile from './Components/UpdateProfile/UpdateProfile';
 import Update from './Components/Update/Update';
+import BasicMap from './Components/GoogleMap/BasicMap';
+import Order from './Components/Orders/Order';
 
 
 const router = createBrowserRouter([
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/map',
-        element:<Map></Map>
+        element:<BasicMap></BasicMap>
       },
       {
         path:'/uProfile',
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
       {
         path:'/update',
         element:<PrivateRoute><Update></Update></PrivateRoute>
+      },
+      {
+        path:'/order',
+        element:<PrivateRoute><Order></Order></PrivateRoute>,
+        loader: ()=> fetch('/estate.json')
       }
     ]
   },

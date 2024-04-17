@@ -1,5 +1,7 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FiMapPin } from "react-icons/fi";
+import { saveHomes } from "../Utility/localstorage.init";
+import Swal from 'sweetalert2'
 
 const Details = () => {
     const {id} = useParams();
@@ -10,6 +12,11 @@ const Details = () => {
     const estate = estates.find(estate => estate.id === idx)
     const { estate_title,segment_name,description,price,status,Area,location,facilities,image,bedrooms,bathrooms,garage,year_built,featured } = estate;
 
+    const handleOrder=()=>{
+        saveHomes(idx)
+        Swal.fire("Your order accepted");
+        
+    }
 
     return (
         <div className="mx-auto md:w-1/2 mb-10">
@@ -45,6 +52,7 @@ const Details = () => {
                     </div>
                     <p>{description}</p>
                     <div className="card-actions justify-center">
+                        <button onClick={handleOrder} className="btn btn-secondary">Order now</button>
                         <Link to="/"><button className="btn btn-secondary">Go Back</button></Link>
                     </div>
                 </div>
