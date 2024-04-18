@@ -1,31 +1,23 @@
-
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-
-import "leaflet/dist/leaflet.css";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import "leaflet/dist/leaflet.css"; 
+import './style.css';
 
 const BasicMap = () => {
-    const position = [51.505, -0.09]
-    const mapStyle = {
-        width: '100%',
-        height: '400px' // Set the height to 400px
-      };
-
-
-    return (
-       <div style={mapStyle}>
-         <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
+  
+  return (
+   
+        <MapContainer className="mb-8 mt-8" center={[51.505, -0.09]} zoom={13}>
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </MapContainer>
-       </div>
-    );
+    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  />
+  <Marker position={[51.505, -0.09]} >
+
+</Marker>
+    </MapContainer>
+    
+    
+  );
 };
 
 export default BasicMap;

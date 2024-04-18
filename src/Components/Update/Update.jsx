@@ -24,9 +24,10 @@ const Update = () => {
         <div className="mx-auto md:w-1/2">
             <h2 className="text-3xl mb-8 text-center">Update Profile</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-            <input type="text" {...register('name', {required:true})} defaultValue={user?.displayName} className="mb-4 w-full py-2 px-4 border" />
+            Name:<input type="text" {...register('name', {required:true})} defaultValue={user?.displayName} className="mb-4 w-full py-2 px-4 border" />
             <br />
-            <input type="text" {...register('photoURL',{required: true})} defaultValue={user?.photoURL}  className="mb-4 border w-full py-2 px-4"/>
+            Photo URL: <input type="text" {...register('photoURL',{required: true})} defaultValue={user?.photoURL}  className="mb-4 border w-full py-2 px-4"/>
+            Email: <input type="text" {...register('email',{required: true})} defaultValue={user?.email} disabled className="mb-4 border w-full py-2 px-4"/>
               
               <input className="btn btn-secondary mb-4 w-full" type="submit" value="Save"/>
             </form>
