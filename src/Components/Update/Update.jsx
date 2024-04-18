@@ -21,7 +21,7 @@ const Update = () => {
             <title>Real Estate | Update</title>
         </Helmet>
       <div>
-        <div className="mx-auto md:w-1/2">
+        <div className="mx-auto md:w-1/2 flex flex-col md:flex-row md:flex-wrap gap-3">
             <h2 className="text-3xl mb-8 text-center">Update Profile</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
             Name:<input type="text" {...register('name', {required:true})} defaultValue={user?.displayName} className="mb-4 w-full py-2 px-4 border" />

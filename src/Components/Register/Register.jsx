@@ -29,7 +29,7 @@ const onSubmit = data =>{
       <Helmet>
           <title>Real Estate | Register</title>
         </Helmet>
-      <div>
+      <div className="m-5">
         <div className="mx-auto md:w-1/2">
             <h2 className="text-3xl mb-8">Please Register</h2>
             <form onSubmit={handleSubmit(onSubmit)}>

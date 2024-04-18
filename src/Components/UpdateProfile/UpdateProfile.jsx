@@ -6,33 +6,12 @@ const UpdateProfile = () => {
     const { user } = useContext(AuthContext);
     
     return (
-        <div className="mb-10 md:w-3/4 mx-auto">
-            <h2 className="text-3xl text-center">Update your info</h2>
-            <div className="overflow-x-auto">
-  <table className="table text-center">
-    {/* head */}
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Photo URL</th>
-      </tr>
-    </thead>
-    <tbody>
-      {/* row 1 */}
-      <tr className="bg-base-200">
-        <th>1</th>
-        <td>{user?.displayName}</td>
-        <td>{user?.email}</td>
-        <td>{user?.photoURL}</td>
-        <td className="text-2xl text-blue-600"><Link to='/update'>Update</Link></td>
-      </tr>  
-    </tbody>
-  </table>
-</div>
-
-        </div>
+       <div className="m-5 border p-5">
+        <h2><strong>Name:</strong> {user?.displayName}</h2>
+       <h2><strong>Email:</strong> {user?.email}</h2>
+       <h2 className="mb-3"><strong>Photo URL:</strong> {user?.photoURL}</h2>
+       <Link to='/update'><button className="btn btn-sm btn-secondary">Update</button></Link>
+       </div>
     );
 };
 

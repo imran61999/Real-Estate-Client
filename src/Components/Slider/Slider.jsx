@@ -12,7 +12,8 @@ import slide3 from '../../assets/slider3.jpg'
 
 const Slider = () => {
     return (
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <div className='px-3'>
+            <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
             <img src={slide1} alt="" />
         </SwiperSlide>
@@ -24,6 +25,7 @@ const Slider = () => {
         </SwiperSlide>
        
       </Swiper>
+        </div>
     );
 };
 

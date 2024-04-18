@@ -64,10 +64,10 @@ const Login = () => {
         <Helmet>
           <title>Real Estate | Login</title>
         </Helmet>
-          <div className="hero min-h-screen bg-base-200">
+          <div className="hero md:min-h-screen bg-base-200">
           <div className="hero-content flex-col">
             <div className="text-center">
-              <h1 className="text-5xl font-bold">Login now!</h1>
+              <h1 className="text-2xl md:text-5xl font-semibold md:font-bold">Login now!</h1>
             </div>
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
               <form onSubmit={handleLogin} className="card-body">
@@ -87,9 +87,9 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
-       <div className="flex mb-5">
-          <button className="text-3xl mx-auto " onClick={handleGoogleLogin}><FcGoogle /></button>
-          <button className="text-3xl mx-auto " onClick={handleGithubSignIn}><GrGithub /></button>
+       <div className="flex gap-3 justify-center  mb-5">
+          <button className="text-3xl" onClick={handleGoogleLogin}><FcGoogle /></button>
+          <button className="text-3xl" onClick={handleGithubSignIn}><GrGithub /></button>
        </div>
        <p className="text-center mb-3">New here? <Link className="text-blue-500 font-bold" to="/register">Create an account</Link></p>
     </div>

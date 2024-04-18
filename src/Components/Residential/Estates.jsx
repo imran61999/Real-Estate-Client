@@ -13,7 +13,7 @@ const Estates = () => {
     return (
         <div className="mb-8">
             <h2 className="text-center text-3xl font-bold mb-8 mt-8">Residential</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="flex flex-col md:flex-row md:flex-wrap gap-5 justify-center">
             {
                 estates.map( estate => <Estate key={estate.id} estate={estate}></Estate>)
             }
