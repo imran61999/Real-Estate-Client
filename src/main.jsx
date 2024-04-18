@@ -45,7 +45,8 @@ const router = createBrowserRouter([
         element:<PrivateRoute><Details></Details></PrivateRoute>
       },
       {
-        path:'/map',
+        path:'/bMap/:id',
+        loader: ()=>fetch('/estate.json'),
         element:<BasicMap></BasicMap>
       },
       {

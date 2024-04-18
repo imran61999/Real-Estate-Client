@@ -48,7 +48,7 @@ const Details = () => {
                     </div>
                     <div className="grid grid-cols-2">
                         <p><span className="font-bold">Address:</span>{location} </p> 
-                        <Link to='/map'><FiMapPin className="text-3xl"/></Link>
+                        <Link to={`/bMap/${id}`}><FiMapPin className="text-3xl"/></Link>
                     </div>
                     <p>{description}</p>
                     <div className="card-actions justify-center">
